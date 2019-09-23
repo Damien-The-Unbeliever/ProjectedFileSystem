@@ -1,0 +1,11 @@
+#pragma once
+#include <projectedfslib.h>
+namespace ProjectedFileSystem {
+	namespace BoundConstants {
+		public enum class PRJ_CALLBACK_DATA_FLAGS
+		{
+			PRJ_CB_DATA_FLAG_ENUM_RESTART_SCAN = ::PRJ_CALLBACK_DATA_FLAGS::PRJ_CB_DATA_FLAG_ENUM_RESTART_SCAN,
+			PRJ_CB_DATA_FLAG_ENUM_RETURN_SINGLE_ENTRY = ::PRJ_CALLBACK_DATA_FLAGS::PRJ_CB_DATA_FLAG_ENUM_RETURN_SINGLE_ENTRY
+		};
+	}
+}

@@ -3,3 +3,19 @@
 ################################################################################
 
 /.vs/ProjectedFileSystem
+/Debug
+/packages
+/ProjectedFileSystem.BoundConstants/Debug
+/ProjectedFileSystem.BoundConstants/x64/Debug
+/ProjectedFileSystem.Core/bin/Debug
+/ProjectedFileSystem.Core/obj
+/ProjectedFileSystem.Core.Tests/bin/Debug
+/ProjectedFileSystem.Core.Tests/obj
+/ProjectedFileSystem.InMemory/bin/Debug/netcoreapp3.0
+/ProjectedFileSystem.InMemory/obj
+/ProjectedFileSystem.IntegratedTests/bin/Debug/netcoreapp3.0
+/ProjectedFileSystem.IntegratedTests/obj
+/ProjectedFileSystem.Scratch/bin/Debug/netcoreapp3.0
+/ProjectedFileSystem.Scratch/obj
+/TestResults
+/x64/Debug

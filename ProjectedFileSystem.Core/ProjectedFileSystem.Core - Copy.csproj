@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8653FE91-0336-4747-8BC0-5EE44AE32703}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProjectedFileSystem.Core</RootNamespace>
+    <AssemblyName>ProjectedFileSystem.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
+    <DocumentationFile>bin\Debug\ProjectedFileSystem.Core.xml</DocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\ProjectedFileSystem.Core.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Interactive.Async, Version=3.2.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Interactive.Async.3.2.0\lib\net46\System.Interactive.Async.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.2\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FileBasedInstanceManager.cs" />
+    <Compile Include="FileSystem\AlternativeDataStreamInfo.cs" />
+    <Compile Include="FileSystem\BasicDirectoryInfo.cs" />
+    <Compile Include="FileSystem\BasicFileInfo.cs" />
+    <Compile Include="FileSystem\BasicInfo.cs" />
+    <Compile Include="FileSystem\InitialNotification.cs" />
+    <Compile Include="FileSystem\NotificationRequired.cs" />
+    <Compile Include="FileSystem\PlaceholderInfo.cs" />
+    <Compile Include="FileSystem\PlaceholderVersion.cs" />
+    <Compile Include="Impl\FileWriteStream.cs" />
+    <Compile Include="Impl\LevelShifter.cs" />
+    <Compile Include="Impl\RunnableInstance.cs" />
+    <Compile Include="Impl\RunningInstance.cs" />
+    <Compile Include="Impl\RunningInstance.Enumeration.cs" />
+    <Compile Include="Impl\RunningInstance.FileData.cs" />
+    <Compile Include="Impl\RunningInstance.HRESULTBridge.cs" />
+    <Compile Include="Impl\RunningInstance.Notifiable.cs" />
+    <Compile Include="Impl\RunningInstance.Placeholder.cs" />
+    <Compile Include="Impl\RunningInstance.Seekable.cs" />
+    <Compile Include="Interfaces\CloseState.cs" />
+    <Compile Include="Interfaces\IFileSystem.cs" />
+    <Compile Include="Interfaces\IInstanceManager.cs" />
+    <Compile Include="Interfaces\INotifiableFileSystem.cs" />
+    <Compile Include="Interfaces\InstanceOptions.cs" />
+    <Compile Include="Interfaces\IRunnableInstance.cs" />
+    <Compile Include="Interfaces\IRunningInstance.cs" />
+    <Compile Include="Interfaces\ISeekableFileSystem.cs" />
+    <Compile Include="Native\Callbacks.cs" />
+    <Compile Include="Native\Constants.cs" />
+    <Compile Include="Native\FILE_STREAM_INFORMATION.cs" />
+    <Compile Include="Native\Functions.cs" />
+    <Compile Include="Native\HRESULT.cs" />
+    <Compile Include="Native\PRJ_BASIC_FILE_INFO.cs" />
+    <Compile Include="Native\PRJ_CALLBACKS.cs" />
+    <Compile Include="Native\PRJ_CALLBACK_DATA.cs" />
+    <Compile Include="Native\PRJ_CALLBACK_DATA_FLAGS.cs" />
+    <Compile Include="Native\PRJ_COMPLETE_COMMAND_EXTENDED_PARAMETERS.cs" />
+    <Compile Include="Native\PRJ_COMPLETE_COMMAND_TYPE.cs" />
+    <Compile Include="Native\PRJ_FILE_STATE.cs" />
+    <Compile Include="Native\PRJ_NOTIFICATION.cs" />
+    <Compile Include="Native\PRJ_NOTIFICATION_MAPPING.cs" />
+    <Compile Include="Native\PRJ_NOTIFICATION_PARAMETERS.cs" />
+    <Compile Include="Native\PRJ_NOTIFY_TYPES.cs" />
+    <Compile Include="Native\PRJ_PLACEHOLDER_INFO.cs" />
+    <Compile Include="Native\PRJ_PLACEHOLDER_VERSION_INFO.cs" />
+    <Compile Include="Native\PRJ_STARTVIRTUALIZING_FLAGS.cs" />
+    <Compile Include="Native\PRJ_STARTVIRTUALIZING_OPTIONS.cs" />
+    <Compile Include="Native\PRJ_UPDATE_FAILURE_CAUSES.cs" />
+    <Compile Include="Native\PRJ_UPDATE_TYPES.cs" />
+    <Compile Include="Native\PRJ_VIRTUALIZATION_INSTANCE_INFO.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProjectedFileSystem.BoundConstants\ProjectedFileSystem.BoundConstants.vcxproj">
+      <Project>{210c66fe-0815-46a7-8102-7d276fe941bc}</Project>
+      <Name>ProjectedFileSystem.BoundConstants</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DataFileFormat.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
